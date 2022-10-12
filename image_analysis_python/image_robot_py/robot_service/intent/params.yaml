@@ -1,0 +1,8 @@
+hotel:
+    dic_file: hotel_dic.dic
+    pat_file: hotel_pat.pat
+    stdq_file: hotel_stdq.dic
+hotel_agent:
+    dic_file: hotel_dic.dic
+    pat_file: hotel_pat.pat
+    stdq_file: hotel_stdq.dic

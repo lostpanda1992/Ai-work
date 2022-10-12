@@ -1,0 +1,52 @@
+data:
+    hotel:
+        match_stdq: data/hotel/standQ_hotel.txt
+        guess_stdq: data/hotel/standQ_hotel.txt
+    hotel_agent:
+        match_stdq: data/hotel/standQ_hotel_agent.txt
+        guess_stdq: data/hotel/standQ_hotel_agent.txt
+    travel:
+        match_stdq: data/travel/standQ_travel.txt
+        guess_stdq: data/travel/standQ_travel.txt
+    ticket:
+        match_stdq: data/ticket/standQ_ticket.txt
+        guess_stdq: data/ticket/standQ_ticket.txt
+    common:
+        match_stdq: data/common/standQ_common.txt
+        guess_stdq: data/common/standQ_common.txt
+
+sbert:
+    hotel:
+        # model_path 里有 vocab.txt
+        model_path: models/sbert/hotel/bert-base-qrobot-mean-tokens-2020-03-20_17-11-45
+    hotel_agent:
+        # model_path 里有 vocab.txt
+        model_path: models/sbert/hotel/bert-base-qrobot-mean-tokens-2020-03-20_17-11-45
+    travel:  # 度假. 现在用的 common 的
+        # model_path 里有 vocab.txt
+        model_path: models/sbert/common/bert-base-qrobot-mean-tokens-all-2020-03-30_16-35-09
+    ticket:  # 门票. 现在用的 common 的
+        # model_path 里有 vocab.txt
+        model_path: models/sbert/common/bert-base-qrobot-mean-tokens-all-2020-03-30_16-35-09
+    common:  # 小驼.
+        # model_path 里有 vocab.txt
+        model_path: models/sbert/common/bert-base-qrobot-mean-tokens-all-2020-03-30_16-35-09
+
+dssm:
+    hotel:
+        vocab_path: models/dssm/hotel/vocab.txt
+        model_path: models/dssm/hotel
+    hotel_agent:
+        vocab_path: models/dssm/hotel/vocab.txt
+        model_path: models/dssm/hotel
+    travel:
+        vocab_path: models/dssm/hotel/vocab.txt
+        model_path: models/dssm/hotel
+    ticket:
+        vocab_path: models/dssm/hotel/vocab.txt
+        model_path: models/dssm/hotel
+
+init_recom:
+    hotel:
+        model_path: models/init_recom/hotel/init_recomm_cls-253.model
+        stdq_label: models/init_recom/hotel/std_q.dic

@@ -1,0 +1,3 @@
+
+beta环境
+curl -X POST -H 'Content-Type:application/json' -d '{"app_code":"h_test","trace_id":"11111","params":[{"original_id":"12345666","source":"redbook","image_url":"https://flight-feed.xxxxxxzz.com/prod/2019/6/16dcb8aa-9e18-4cea-aef1-626056d58730.jpeg"},{"original_id":"12345666","source":"redbook","image_url":"https://flight-feed.xxxxxxzz.com/prod/2019/6/16dcb8aa-9e18-4cea-aef1-626056d58730.jpeg"}]}'  http://l-ml10.wap.beta.cn0:8088/image/waterMark/detect

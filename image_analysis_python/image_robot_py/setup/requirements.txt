@@ -1,0 +1,21 @@
+# 使用 conda 安装, 走清华默认 channel 就好
+tensorflow==1.15.0
+tornado==6.0.3
+pyyaml==5.3
+
+# pytorch 安装要走 pytorch 这个 channel
+sudo conda install pytorch=1.4.0 torchvision=0.5.0 cpuonly -c pytorch
+
+# 使用 pip 安装
+onnxruntime==1.2.0
+transformers==2.3.0
+sentence-transformers==0.2.5
+xgboost==1.0.2
+PyMySQL==0.9.3
+pycrypto==2.6.1
+
+# 依赖的系统工具
+pycrypto 需要 gcc: sudo yum install gcc
+
+# 查询大目录
+sudo du -s * --exclude='proc' | sort -k1nr

@@ -1,0 +1,68 @@
+
+sudo yum install bzip2 gcc unzip mesa-libGL.x86_64
+
+
+sudo wget https://owncloud.corp.xxxxxx.com/index.php/s/NhEc8Ln9QSiGe4O/download --no-check-certificate -O Miniconda3-4.3.30-Linux-x86_64.sh
+sudo chmod +x Miniconda3-4.3.30-Linux-x86_64.sh
+sudo ./Miniconda3-4.3.30-Linux-x86_64.sh
+安装路径：/home/q/miniconda3
+
+echo "
+channels:
+  - defaults
+show_channel_urls: true
+channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+" > ~/.condarc
+
+if [ ! -d "~/.pip" ]; then
+    mkdir ~/.pip
+fi
+
+echo "
+[global]
+index_url=http://devpi.corp.xxxxxx.com/xxxxxx/dev/+simple/
+trusted-host=devpi.corp.xxxxxx.com
+#index-url=https://pypi.tuna.tsinghua.edu.cn/simple
+" > ~/.pip/pip.conf
+
+
+安装python 3.8环境
+sudo /home/q/miniconda3/bin/conda create -n image_analysis python=3.8
+
+进入新环境 image_analysis
+source /home/q/miniconda3/bin/activate image_analysis
+
+sourcd /home/q/home/jonny.chen/miniconda/nlp/bin/activate tagger
+cd /home/q/home/jonny.chen/tagpicture/od-annotation-master
+python app.py --start
+
+sudo pip install -r requirements.txt -i  https://pypi.tuna.tsinghua.edu.cn/simple
+
+安装ffmpeg
+wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+xz -d ffmpeg-git-amd64-static.tar.xz
+tar -xvf ffmpeg-git-amd64-static.tar
+
+cd /usr/bin
+sudo ln -s /home/q/www/ffmpeg-4.4-amd64-static/ffmpeg ffmpeg
+sudo ln -s /home/q/www/ffmpeg-4.4-amd64-static/ffprobe ffprobe
+
+
+上传模型
+
+sudo yum install gcc-c++
+sudo /home/q/miniconda3/envs/image_analysis/bin/pip install imagededup  -i  https://pypi.tuna.tsinghua.edu.cn/simple
+

@@ -1,0 +1,16 @@
+train_test_ratio: 0.8
+dropout: 1
+lr: 0.001
+batch_size: 128
+epoches: 50
+rnn_size: 100
+num_rnn_layers: 1
+evaluate_every: 1000
+num_unroll_steps: 50
+max_grad_norm: 5
+allow_soft_placement: True
+log_device_placement: False
+gpu_options: 0.9
+filter_sizes: [1, 2, 3, 5]
+num_filters: 300
+embedding_size: 100
